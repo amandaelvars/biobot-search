@@ -1,6 +1,8 @@
 import React from 'react';
 
-const Results = (searchResults) => {
+const Results = (props) => {
+  const {searchResults} = props;
+  console.log('searchResults ', searchResults)
     
     return (
         <div className="search-result">
@@ -11,14 +13,14 @@ const Results = (searchResults) => {
                     <th>Shipping Number</th>
                 </tr>
                 </thead>
-                {searchResults.map((info) => {
+                {searchResults.map((info) =>
                 <tbody>
                     <tr>
                         <td>{info.label_id}</td>
                         <td>{info.shipping_tracking_code}</td>
                     </tr>
                 </tbody>
-})}
+)}
                        
             </table>
         </div>
